@@ -16,7 +16,6 @@
           <td>{{row.publisher}}</td>
           <td><router-link v-bind:to="{ name : 'Detail', params : { id: row.id }}" >詳細</router-link ></td>
           <td><a href="javascript:void(0);" v-on:click="deleteBook(row.id)">削除</a></td>
-          <!-- <td><a href="javascript:void(0);" v-on:click="deleteBook()">削除</a></td> -->
         </tr>
       </tbody>
     </table>
@@ -40,14 +39,11 @@ export default {
       }
     })
       .then((response) => {
-        this.bookList = response.data
-        console.dir(this.bookList)
+        this.bookList = response.data;
       })
   },
   methods: {
     deleteBook (id) {
-      console.log(this);
-      console.log(id);
     　if (window.confirm('削除しますか')){
           axios.delete('http://localhost:8080/book/delete/' + id, {
               headers: {
@@ -57,8 +53,7 @@ export default {
             })
             .then((response) => {
               this.results = response.data
-              console.dir(this.results)
-              window.alert('削除しました')
+              window.alert('削除しました');
               location.reload();
             })
           location.reload();
