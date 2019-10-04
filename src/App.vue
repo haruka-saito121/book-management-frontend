@@ -1,31 +1,42 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+<div id="app">
+  <div id="header">
+    <!--リンクタグを生成します。-->
+    <router-link to="/">top</router-link>
+    <router-link to="/Register">新規登録</router-link>
   </div>
+  <!--上記のリンクタグで設定したコンポーネントが表示される場所です。-->
+  <router-view></router-view>
+</div>
 </template>
 
+<!--コンポーネントの名前を定義します。-->
+<script>
+export default {
+  name: 'App'
+}
+</script>
+
+<!--スタイルの指定をします-->
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+body {
+  margin: 0;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+#header {
+  height: 40px;
+  background: white;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#header a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 10px;
+  padding: 3px 10px;
+  background: #005ab3;
 }
 </style>
