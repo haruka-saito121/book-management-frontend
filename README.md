@@ -1,4 +1,4 @@
-# bookmanagement
+# book-management-frontend
 
 ## Project setup
 ```
